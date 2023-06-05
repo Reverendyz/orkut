@@ -11,7 +11,8 @@ import {
 import { Content, Header } from "antd/es/layout/layout";
 import orkut from "../assets/orkut.png";
 import profile from "../assets/profile.jpeg";
-import { StarOutlined } from "@ant-design/icons";
+import { MessageOutlined, PictureOutlined, PushpinFilled, StarOutlined } from "@ant-design/icons";
+const { Title } = Typography;
 
 const profileOptions = [
     {
@@ -94,7 +95,10 @@ export default function Main(){
                                 }}>
                             <Image
                                 width={300}
-                                src={profile}/>
+                                src={profile}
+                                style={{
+                                    margin: "1rem",
+                                }}/>
                             <Typography.Title
                                 level={2}
                                 style={{
@@ -120,8 +124,15 @@ export default function Main(){
                         </Col>
                         <Col
                             span={10}
-                            style={{backgroundColor: 'white'}}>
-                            Some content
+                            style={{
+                                backgroundColor: 'white',
+                                textAlign: "center",}}>
+                            <Title level={2}>Hello, Felipe</Title>
+                            <PushpinFilled/>Taggings
+                            <PictureOutlined/>Photos
+                            <PictureOutlined/>Photos with me
+                            <StarOutlined/>Stars
+                            <MessageOutlined/>Messages
                         </Col>
                         <Col
                             span={6}
