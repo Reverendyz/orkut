@@ -6,12 +6,14 @@ import {
     List,
     Col,
     Row,
-    Typography
+    Typography,
+    Divider
 } from "antd";
 import { Content, Header } from "antd/es/layout/layout";
 import orkut from "../assets/orkut.png";
 import profile from "../assets/profile.jpeg";
 import { MessageOutlined, PictureOutlined, PushpinFilled, StarOutlined } from "@ant-design/icons";
+import NewsFeed from "./feed/NewsFeed";
 const { Title } = Typography;
 
 const profileOptions = [
@@ -96,9 +98,7 @@ export default function Main(){
                             <Image
                                 width={300}
                                 src={profile}
-                                style={{
-                                    margin: "1rem",
-                                }}/>
+                                />
                             <Typography.Title
                                 level={2}
                                 style={{
@@ -126,13 +126,28 @@ export default function Main(){
                             span={10}
                             style={{
                                 backgroundColor: 'white',
-                                textAlign: "center",}}>
+                                textAlign: "center",
+                                }}>
                             <Title level={2}>Hello, Felipe</Title>
-                            <PushpinFilled/>Taggings
-                            <PictureOutlined/>Photos
-                            <PictureOutlined/>Photos with me
-                            <StarOutlined/>Stars
-                            <MessageOutlined/>Messages
+                            <Row justify="space-between">
+                                <Col>
+                                    <Button type="text"><PushpinFilled/>Taggings</Button>
+                                </Col>
+                                <Col>
+                                    <Button type="text"><PictureOutlined/>Photos</Button>
+                                </Col>
+                                <Col>
+                                    <Button type="text"><PictureOutlined/>Photos with me</Button>
+                                </Col>
+                                <Col>
+                                    <Button type="text"><StarOutlined/>Stars</Button>
+                                </Col>
+                                <Col>
+                                    <Button type="text"><MessageOutlined/>Messages</Button>
+                                </Col>
+                            </Row>
+                            <Divider orientation="left">News Feed</Divider>
+                            <NewsFeed/>
                         </Col>
                         <Col
                             span={6}
